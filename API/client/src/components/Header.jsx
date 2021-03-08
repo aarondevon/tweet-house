@@ -5,9 +5,9 @@ function Header() {
   return (
     <div className="App">
       <div className="container">
-        <header className="">
+        <header>
           <Nav />
-          <h1>Twitter Showcase</h1>
+          <h1 id="header-title">Twitter Showcase</h1>
         </header>
       </div>
     </div>

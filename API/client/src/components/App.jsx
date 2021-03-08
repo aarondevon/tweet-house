@@ -4,11 +4,11 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import './App.css';
-import Header from './components/Header';
-import Home from './components/Home';
-import RandomTweetPage from './components/RandomTweetPage';
-import TweetSearchPage from './components/TweetSearchPage';
+import '../styles/components/_app.css';
+import Header from './Header';
+import Home from './Home';
+import RandomTweetPage from './RandomTweetPage';
+import TweetSearchPage from './TweetSearchPage';
 
 function App() {
   return (
