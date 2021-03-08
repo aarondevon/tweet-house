@@ -17,7 +17,7 @@ function App() {
 
         <div className="container">
           <Header />
-        </div>
+
         <Switch>
           <Route path="/" exact={true}>
             <Home />
@@ -29,6 +29,7 @@ function App() {
             <TweetSearchPage />
           </Route>
         </Switch>
+        </div>
       </Router>
     </div>
   );
