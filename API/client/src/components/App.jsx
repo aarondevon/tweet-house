@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
-} from "react-router-dom";
+  Route,
+} from 'react-router-dom';
 import '../styles/components/_app.css';
 import Header from './Header';
 import Home from './Home';
@@ -18,17 +18,17 @@ function App() {
         <div className="container">
           <Header />
 
-        <Switch>
-          <Route path="/" exact={true}>
-            <Home />
-          </Route>
-          <Route path="/random-tweet">
-            <RandomTweetPage />
-          </Route>
-          <Route path="/tweet-search">
-            <TweetSearchPage />
-          </Route>
-        </Switch>
+          <Switch>
+            <Route path="/" exact>
+              <Home />
+            </Route>
+            <Route path="/random-tweet">
+              <RandomTweetPage />
+            </Route>
+            <Route path="/tweet-search">
+              <TweetSearchPage />
+            </Route>
+          </Switch>
         </div>
       </Router>
     </div>
