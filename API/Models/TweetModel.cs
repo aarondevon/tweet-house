@@ -19,7 +19,6 @@ namespace API.Models
         public object in_reply_to_user_id_str { get; set; }
         public object in_reply_to_screen_name { get; set; }
         public UserModel user { get; set; }
-        public object geo { get; set; }
         public object coordinates { get; set; }
         public object place { get; set; }
         public object contributors { get; set; }
