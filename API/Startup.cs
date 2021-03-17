@@ -13,7 +13,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using TwitterShowcaseLibrary.Services;
-using TwitterShowcaseLibrary.StarWars;
 using TwitterShowcaseLibrary.Twitter;
 
 namespace API
@@ -43,10 +42,10 @@ namespace API
                 config.RootPath = "client/build";
             });
             services.AddHttpClient();
-            services.AddSingleton<IStarWarsPersonService, StarWarsPersonService>();
-            services.AddSingleton<IStarWarsGetRandomPerson, StarWarsGetRandomPerson>();
             services.AddSingleton<IUserTweetService, UserTweetService>();
             services.AddSingleton<IGetUserTweet, GetUserTweet>();
+            services.AddScoped<IKeywordTweetService, KeywordTweetService>();
+            services.AddScoped<IGetTweetBasedOnKeyword, GetTweetBasedOnKeyword>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
