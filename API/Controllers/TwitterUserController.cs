@@ -8,7 +8,7 @@ using TwitterShowcaseLibrary.Services;
 
 namespace API.Controllers
 {
-    [Route("api/search/{user}")]
+    [Route("api/user/{user}")]
     [ApiController]
     public class TwitterUserController : ControllerBase
     {
