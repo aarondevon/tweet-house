@@ -26,7 +26,7 @@ namespace API.Controllers
         {
             string bearerToken = _configuration.GetValue<string>("TwitterSettings:BearerToken");
 
-            var result = await _keywordTweetService.GetTweetDataBasedOnKeyword(keyword);
+            var result = await _keywordTweetService.GetTweetDataBasedOnKeyword(bearerToken, keyword);
             return Ok(result);
         }
     }
