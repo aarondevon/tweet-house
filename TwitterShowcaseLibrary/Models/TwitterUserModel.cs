@@ -2,7 +2,7 @@
 {
     public class TwitterUserModel
     {
-        public int id { get; set; }
+        public double id { get; set; }
         public string id_str { get; set; }
         public string name { get; set; }
         public string screen_name { get; set; }
