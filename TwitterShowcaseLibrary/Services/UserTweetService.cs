@@ -17,9 +17,9 @@ namespace TwitterShowcaseLibrary.Services
             _getUserTweet = getUserTweet;
         }
 
-        public async Task<List<TweetModel>> GetTweetDataBasedOnUser(string user)
+        public async Task<List<TweetModel>> GetTweetDataBasedOnUser(string bearerToken, string user)
         {
-            return await _getUserTweet.ReturnTweetDataBasedOnUser(user);
+            return await _getUserTweet.ReturnTweetDataBasedOnUser(bearerToken, user);
         }
     }
 }

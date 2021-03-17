@@ -9,6 +9,6 @@ namespace TwitterShowcaseLibrary.Services
 {
     public interface IUserTweetService
     {
-        Task<List<TweetModel>> GetTweetDataBasedOnUser(string user);
+        Task<List<TweetModel>> GetTweetDataBasedOnUser(string bearerToken, string user);
     }
 }

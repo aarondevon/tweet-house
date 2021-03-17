@@ -9,6 +9,6 @@ namespace TwitterShowcaseLibrary.Twitter
 {
     public interface IGetUserTweet
     {
-        Task<List<TweetModel>> ReturnTweetDataBasedOnUser(string user);
+        Task<List<TweetModel>> ReturnTweetDataBasedOnUser(string bearerToken, string user);
     }
 }
