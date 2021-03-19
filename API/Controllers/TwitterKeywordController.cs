@@ -24,7 +24,6 @@ namespace API.Controllers
 
         public async Task<IActionResult> getKeywordTweet(string keyword)
         {
-            // Test this
             //string bearerToken = _configuration.GetValue<string>("TwitterSettings:BearerToken");
             string bearerToken = Environment.GetEnvironmentVariable("TWITTER_BEARER_TOKEN");
 
