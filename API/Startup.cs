@@ -64,7 +64,7 @@ namespace API
 
             app.UseAuthorization();
 
-            app.UseSpaStaticFiles(new StaticFileOptions { RequestPath = "/client/build" });
+            //app.UseSpaStaticFiles(new StaticFileOptions { RequestPath = "/client/build" });
             
             app.UseEndpoints(endpoints =>
             {
