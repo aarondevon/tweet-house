@@ -65,16 +65,19 @@ namespace API
             app.UseRouting();
 
             app.UseAuthorization();
-
+            
             //app.UseSpaStaticFiles(new StaticFileOptions { RequestPath = "/client/build" });
 
-            app.UseSpaStaticFiles(new StaticFileOptions
-            {
-                FileProvider = new PhysicalFileProvider(
-        Path.Combine(env.ContentRootPath, "client", "build")
-        ),
-                RequestPath = "/"
-            });
+            //    app.UseSpaStaticFiles(new StaticFileOptions
+            //    {
+            //        FileProvider = new PhysicalFileProvider(
+            //Path.Combine(env.ContentRootPath, "client", "build", "static")
+            //),
+            //        RequestPath = "/static"
+            //    });
+
+            app.UseStaticFiles();
+            app.UseSpaStaticFiles();
 
             app.UseEndpoints(endpoints =>
             {
