@@ -71,9 +71,9 @@ namespace API
             app.UseSpaStaticFiles(new StaticFileOptions
             {
                 FileProvider = new PhysicalFileProvider(
-        Path.Combine(env.ContentRootPath, "client", "build", "static")
+        Path.Combine(env.ContentRootPath, "client", "build")
         ),
-                RequestPath = "/static"
+                RequestPath = "/"
             });
 
             app.UseEndpoints(endpoints =>
