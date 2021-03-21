@@ -11,7 +11,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@master
@@ -32,5 +32,5 @@ jobs:
       with:
         app-name: 'tweethouse'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_fc054a214a994708a9d68bfea896f9fa }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_65c1f5456b8248349f9ca0a289deacac }}
         package: ${{env.DOTNET_ROOT}}/myapp 
