@@ -44,10 +44,13 @@ namespace API
                 config.RootPath = "client/build";
             });
             services.AddHttpClient();
-            services.AddSingleton<IUserTweetService, UserTweetService>();
-            services.AddSingleton<IGetUserTweet, GetUserTweet>();
+            services.AddScoped<IUserTweetService, UserTweetService>();
+            services.AddScoped<IGetUserTweet, GetUserTweet>();
             services.AddScoped<IKeywordTweetService, KeywordTweetService>();
             services.AddScoped<IGetTweetBasedOnKeyword, GetTweetBasedOnKeyword>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IGetUserData, GetUserData>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
