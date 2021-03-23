@@ -70,24 +70,45 @@ function TweetSearchPage() {
     <main className="flex center-y column">
       <div id="search-page-container">
         <form
-          className="form-inline my-2 my-lg-0 flex space-between-x"
+          className="my-2 my-lg-0"
           onSubmit={handelTweetSearchSubmit}
         >
-          <input
-            id="search"
-            className="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            name="search"
-            aria-label="Search"
-            onChange={handleSearchChange}
-          />
-          <button
-            className="btn btn-outline-primary my-2 my-sm-0"
-            type="submit"
-          >
-            Search
-          </button>
+          <div className="row">
+            <div className="col-4 pr-0">
+              <div className="form-group">
+                <select id="search-select" className="form-control">
+                  <option>Keyword</option>
+                  <option>Username</option>
+                </select>
+              </div>
+            </div>
+            <div className="col-8">
+              <div className="form-group">
+                <input
+                  id="search-input"
+                  className="form-control mr-sm-2"
+                  type="search"
+                  placeholder="Search"
+                  name="search"
+                  aria-label="Search"
+                  onChange={handleSearchChange}
+                />
+              </div>
+            </div>
+
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <button
+                id="search-button"
+                className="btn btn-outline-primary my-2 my-sm-0"
+                type="submit"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+
         </form>
         {tweets.length > 1 && displayTweets(tweets)}
       </div>
