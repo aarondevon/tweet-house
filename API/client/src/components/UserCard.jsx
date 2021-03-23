@@ -7,17 +7,16 @@ function UserCard(props) {
   return (
     <div className="card">
       <div className="row">
-        <div className="col-3">
+        <div className="col-4 flex center-x center-y">
           <img className="profile-picture" src={props.userData.profileImageUrl} alt="twitter profile" />
         </div>
-        <div className="col-9">
+        <div id="user-content" className="col-8">
           <div className="row">
             <div className="col-12">
               <div className="card-body">
                 <h5 className="card-title">{props.userData.name}</h5>
                 <h6 className="card-subtitle mb-2 text-muted">
                   {`@${props.userData.screenName}`}
-                  {console.log(props)}
                 </h6>
                 <button className="btn btn-primary" onClick={props.getRandomTweet}>View Tweet</button>
               </div>
