@@ -18,7 +18,7 @@ function UserCard(props) {
                 <h6 className="card-subtitle mb-2 text-muted">
                   {`@${props.userData.screenName}`}
                 </h6>
-                <button className="btn btn-primary" onClick={props.getRandomTweet}>View Tweet</button>
+                <button className="btn btn-primary" onClick={() => props.getRandomTweet(props.userData.screenName)}>View Tweet</button>
               </div>
             </div>
           </div>

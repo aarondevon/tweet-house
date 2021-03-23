@@ -8,15 +8,15 @@ function Tweet(props) {
     <div className="card">
       <div className="row">
         <div className="col-1">
-          <img className="profile-picture" src={props.profileImage} alt="twitter profile" />
+          <img className="profile-picture" src={props.tweetData.user.profileImageUrl} alt="twitter profile" />
         </div>
         <div className="col-11">
           <div className="row">
             <div className="col-12">
               <div className="card-body">
-                <h5 className="card-title">{props.screenName}</h5>
+                <h5 className="card-title">{props.tweetData.user.name}</h5>
                 <p className="card-text">
-                  {props.tweetText}
+                  {props.full_text}
                 </p>
               </div>
             </div>
