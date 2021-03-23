@@ -37,13 +37,25 @@ function TweetSearchPage() {
   // eslint-disable-next-line no-unused-vars
   const [tweetSearch, setTweetSearch] = useState('');
   const [tweets, setTweets] = useState([]);
+  const [searchSelector, setSearchSelector] = useState('Keyword');
 
   const handelTweetSearchSubmit = async (event) => {
     event.preventDefault();
-    const response = await axios.get(`https://localhost:44322/api/user/${tweetSearch}`);
-    // eslint-disable-next-line no-console
-    // console.log(response.data);
-    setTweets(response.data);
+    console.log(searchSelector);
+    const url = searchSelector === 'Keyword' ? `https://localhost:44322/api/keyword/${tweetSearch}` : `https://localhost:44322/api/user/${tweetSearch}`;
+    console.log(url);
+
+    const response = await axios.get(url);
+    console.log(response);
+    if (searchSelector === 'Keyword' && response.data.statuses.length > 0) {
+      setTweets(response.data.statuses);
+    } else if (searchSelector === 'Username' && response.data.length > 0) {
+      setTweets(response.data);
+    }
+  };
+
+  const handleSearchSelectorChange = (event) => {
+    setSearchSelector(event.target.value);
   };
 
   const handleSearchChange = (event) => {
@@ -76,7 +88,11 @@ function TweetSearchPage() {
           <div className="row">
             <div className="col-4 pr-0">
               <div className="form-group">
-                <select id="search-select" className="form-control">
+                <select
+                  id="search-select"
+                  className="form-control"
+                  onChange={handleSearchSelectorChange}
+                >
                   <option>Keyword</option>
                   <option>Username</option>
                 </select>
@@ -98,7 +114,7 @@ function TweetSearchPage() {
 
           </div>
           <div className="row">
-            <div className="col-12">
+            <div className="col-12 flex right-x">
               <button
                 id="search-button"
                 className="btn btn-outline-primary my-2 my-sm-0"
@@ -110,7 +126,7 @@ function TweetSearchPage() {
           </div>
 
         </form>
-        {tweets.length > 1 && displayTweets(tweets)}
+        {tweets.length > 1 ? displayTweets(tweets) : <h3>No tweets to display</h3>}
       </div>
 
     </main>
