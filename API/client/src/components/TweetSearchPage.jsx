@@ -66,11 +66,7 @@ function TweetSearchPage() {
   const displayTweets = () => {
     return tweets.map((tweet) => {
       return (
-        <Tweet
-          profileImage={tweet.user.profile_image_url_https}
-          screenName={tweet.user.name}
-          tweetText={tweet.full_text}
-        />
+        <Tweet tweetData={tweet} />
       );
     });
   };
