@@ -1,3 +1,4 @@
+/* eslint-disable arrow-body-style */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Tweet from './Tweet';
@@ -31,17 +32,6 @@ import Tweet from './Tweet';
 // ];
 
 // eslint-disable-next-line arrow-body-style
-const displayTweets = (tweets) => {
-  return tweets.map((tweet) => {
-    return (
-      <Tweet
-        profileImage={tweet.user.profile_image_url_https}
-        screenName={tweet.user.name}
-        tweetText={tweet.full_text}
-      />
-    );
-  });
-};
 
 function TweetSearchPage() {
   // eslint-disable-next-line no-unused-vars
@@ -52,13 +42,25 @@ function TweetSearchPage() {
     event.preventDefault();
     const response = await axios.get(`https://localhost:44322/api/user/${tweetSearch}`);
     // eslint-disable-next-line no-console
-    console.log(response.data);
+    // console.log(response.data);
     setTweets(response.data);
   };
 
   const handleSearchChange = (event) => {
     setTweetSearch(event.target.value);
-    console.log(tweetSearch);
+    // console.log(tweetSearch);
+  };
+
+  const displayTweets = () => {
+    return tweets.map((tweet) => {
+      return (
+        <Tweet
+          profileImage={tweet.user.profile_image_url_https}
+          screenName={tweet.user.name}
+          tweetText={tweet.full_text}
+        />
+      );
+    });
   };
 
   useEffect(() => {
