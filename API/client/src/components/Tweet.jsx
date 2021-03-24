@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 // eslint-disable react/destructuring-assignment
 import React from 'react';
+import { FaRetweet, FaRegHeart } from 'react-icons/fa';
 
 function Tweet(props) {
   return (
@@ -22,6 +23,22 @@ function Tweet(props) {
                 <p className="card-text">
                   {props.tweetData.fullText}
                 </p>
+                <div className="flex">
+                  <div className="col-4">
+                    <div className="row space-between-x">
+                      <div>
+                        <FaRetweet className="icon" />
+                        {props.tweetData.retweetCount}
+                      </div>
+                      <div>
+                        <FaRegHeart className="icon" />
+                        {props.tweetData.favoriteCount}
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
               </div>
             </div>
           </div>
