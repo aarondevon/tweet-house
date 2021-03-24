@@ -1,3 +1,5 @@
+/* eslint-disable consistent-return */
+/* eslint-disable jsx-a11y/media-has-caption */
 import React from 'react';
 import {
   BrowserRouter as Router,
@@ -9,6 +11,25 @@ import Header from './Header';
 import Home from './Home';
 import RandomTweetPage from './RandomTweetPage';
 import TweetSearchPage from './TweetSearchPage';
+
+function checkForMedia(tweetData) {
+  if (tweetData.extendedEntities === null) {
+    return false;
+  }
+}
+
+function getMedia(tweetData) {
+  if (tweetData.tweetData.extendedEntities.media[0].type === 'photo') {
+    return <img src={tweetData.extendedEntities.media[0].media_url_https} alt="media from tweet" />;
+  }
+  if (tweetData.tweetData.extendedEntities.media[0].type === 'video') {
+    return (
+      <video>
+        <source src={tweetData.extendedEntities.media[0].media_url_https} alt="media from tweet" />
+      </video>
+    );
+  }
+}
 
 function App() {
   return (
@@ -23,10 +44,10 @@ function App() {
               <Home />
             </Route>
             <Route path="/random-tweet">
-              <RandomTweetPage />
+              <RandomTweetPage checkForMedia={checkForMedia} getMedia={getMedia} />
             </Route>
             <Route path="/tweet-search">
-              <TweetSearchPage />
+              <TweetSearchPage checkForMedia={checkForMedia} getMedia={getMedia} />
             </Route>
           </Switch>
         </div>
