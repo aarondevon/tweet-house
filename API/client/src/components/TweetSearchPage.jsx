@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable arrow-body-style */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -33,7 +34,7 @@ import Tweet from './Tweet';
 
 // eslint-disable-next-line arrow-body-style
 
-function TweetSearchPage() {
+function TweetSearchPage(props) {
   // eslint-disable-next-line no-unused-vars
   const [tweetSearch, setTweetSearch] = useState('');
   const [tweets, setTweets] = useState([]);
@@ -66,7 +67,11 @@ function TweetSearchPage() {
   const displayTweets = () => {
     return tweets.map((tweet) => {
       return (
-        <Tweet tweetData={tweet} />
+        <Tweet
+          tweetData={tweet}
+          checkForMedia={props.checkForMedia}
+          getMedia={props.getMedia}
+        />
       );
     });
   };

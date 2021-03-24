@@ -23,6 +23,7 @@ function Tweet(props) {
                 <p className="card-text">
                   {props.tweetData.fullText}
                 </p>
+                {props.checkForMedia(props.tweetData) && props.getMedia(props.tweetData)}
                 <div className="flex">
                   <div className="col-4">
                     <div className="row space-between-x">
