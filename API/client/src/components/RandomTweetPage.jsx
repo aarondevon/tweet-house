@@ -60,14 +60,7 @@ function RandomTweetPage() {
     >
       {displayUsers()}
 
-      <Button variant="primary" onClick={handleShow}>
-
-        Open Demo Model
-
-      </Button>
-
       <Modal size="lg" show={showModal} onHide={handleClose}>
-
         <Modal.Header closeButton>
           test
         </Modal.Header>
