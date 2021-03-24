@@ -9,7 +9,6 @@ function RandomTweetPage() {
   const [screenNames] = useState(['npmjs', 'freeCodeCamp', 'ClassicalMPR', 'BBCScienceNews', 'NASA']);
   const [userProfileData, setUserProfileData] = useState([]);
   const [showModal, setShowModal] = useState(false);
-  // const [modalUser, setModalUser] = useState('');
   const [randomTweet, setRandomTweet] = useState([]);
 
   const getUserProfileData = async (screenName) => {
@@ -21,7 +20,6 @@ function RandomTweetPage() {
     const profileData = screenNames.map((screenName) => {
       return getUserProfileData(screenName);
     });
-    console.log(profileData);
     setUserProfileData(await Promise.all(profileData));
   };
 
@@ -35,15 +33,10 @@ function RandomTweetPage() {
   };
 
   const handleRandomTweetOnClick = async (screenName) => {
-    // setModalUser(screenName);
     const tweetData = await getRandomTweetBasedOnScreenName(screenName);
     setRandomTweet(tweetData);
     handleShow();
   };
-
-  // const showRandomTweet = async () => {
-
-  // };
 
   const displayUsers = () => {
     return userProfileData.map((userData) => {
