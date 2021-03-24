@@ -76,10 +76,10 @@ function RandomTweetPage() {
       <Modal size="lg" show={showModal} onHide={handleClose}>
 
         <Modal.Header closeButton>
-          Tweet
+          test
         </Modal.Header>
 
-        <Modal.Body>
+        <Modal.Body className="flex center-x">
           <Tweet tweetData={randomTweet} />
         </Modal.Body>
 
