@@ -12,10 +12,10 @@ namespace TwitterShowcaseLibrary.Models
     {
         [DataMember(Name = "full_text")]
         public string FullText { get; set; }
-        [DataMember(Name = "display_text_range")]
-        public int[] DisplayTextRange { get; set; }
-        [DataMember(Name = "source")]
-        public string Source { get; set; }
+        [DataMember(Name = "entities")]
+        public EntityModel Entities { get; set; }
+        [DataMember(Name = "extended_entities")]
+        public ExtendedEntityModel ExtendedEntities { get; set; }
         [DataMember(Name = "user")]
         public TwitterUserModel User { get; set; }
         [DataMember(Name = "retweet_count")]
