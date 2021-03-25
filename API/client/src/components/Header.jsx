@@ -7,7 +7,7 @@ function Header() {
       <div className="container">
         <header>
           <Nav />
-          <h1 id="header-title">Twitter Showcase</h1>
+          <h1 id="header-title">Tweet House</h1>
         </header>
       </div>
     </div>
