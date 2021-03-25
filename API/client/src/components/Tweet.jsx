@@ -10,7 +10,6 @@ function Tweet(props) {
     <div className="card">
       <div className="row">
         <div className="col-1">
-          {console.log(props)}
           <img className="profile-picture" src={props.tweetData.user.profileImageUrl} alt="twitter profile" />
         </div>
         <div className="col-11">
