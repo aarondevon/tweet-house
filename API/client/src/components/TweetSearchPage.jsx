@@ -26,12 +26,18 @@ function TweetSearchPage(props) {
   };
 
   const handleSearchSelectorChange = (event) => {
+    const trimmedSearch = tweetSearch.replace(/\s/g, '');
+    setTweetSearch(trimmedSearch);
     setSearchSelector(event.target.value);
   };
 
   const handleSearchChange = (event) => {
+    if (searchSelector === 'Username') {
+      const trimmedSearch = event.target.value.replace(/\s/g, '');
+      setTweetSearch(trimmedSearch);
+      return;
+    }
     setTweetSearch(event.target.value);
-    // console.log(tweetSearch);
   };
 
   const displayTweets = () => {
@@ -78,6 +84,7 @@ function TweetSearchPage(props) {
                   placeholder="Search"
                   name="search"
                   aria-label="Search"
+                  value={tweetSearch}
                   onChange={handleSearchChange}
                 />
               </div>
