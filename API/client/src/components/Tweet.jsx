@@ -25,13 +25,13 @@ function Tweet(props) {
                 </p>
                 {props.checkForMedia(props.tweetData) && props.getMedia(props.tweetData)}
                 <div className="flex">
-                  <div className="col-4">
-                    <div className="row space-between-x">
-                      <div>
+                  <div className="col-8">
+                    <div id="icon-container" className="row">
+                      <div id="retweet-container">
                         <FaRetweet className="icon" />
                         {props.tweetData.retweetCount}
                       </div>
-                      <div>
+                      <div id="heart-container">
                         <FaRegHeart className="icon" />
                         {props.tweetData.favoriteCount}
                       </div>
