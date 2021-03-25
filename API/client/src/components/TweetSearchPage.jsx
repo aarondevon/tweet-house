@@ -68,7 +68,7 @@ function TweetSearchPage(props) {
           onSubmit={handelTweetSearchSubmit}
         >
           <div className="row">
-            <div className="col-4 pr-0">
+            <div className="col-sm-4">
               <div className="form-group">
                 <select
                   id="search-select"
@@ -80,11 +80,14 @@ function TweetSearchPage(props) {
                 </select>
               </div>
             </div>
-            <div className="col-8">
+          </div>
+
+          <div className="row">
+            <div className="col-sm-9 input-container">
               <div className="form-group">
                 <input
                   id="search-input"
-                  className="form-control mr-sm-2"
+                  className="form-control"
                   type="search"
                   placeholder="Search"
                   name="search"
@@ -94,13 +97,10 @@ function TweetSearchPage(props) {
                 />
               </div>
             </div>
-
-          </div>
-          <div className="row">
-            <div className="col-12 flex right-x">
+            <div className="col-sm-3 button-container">
               <button
                 id="search-button"
-                className="btn btn-outline-primary my-2 my-sm-0"
+                className="btn btn-outline-primary"
                 type="submit"
               >
                 Search
