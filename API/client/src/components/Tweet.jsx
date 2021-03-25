@@ -1,12 +1,9 @@
-/* eslint-disable react/prop-types */
-// eslint-disable react/destructuring-assignment
 import React from 'react';
 import Linkify from 'react-linkify';
 import { FaRetweet, FaRegHeart } from 'react-icons/fa';
 
 function Tweet(props) {
   return (
-    // style="width: 18rem;"
     <div className="card">
       <div className="row">
         <div className="col-1">
