@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 // eslint-disable react/destructuring-assignment
 import React from 'react';
+import Linkify from 'react-linkify';
 import { FaRetweet, FaRegHeart } from 'react-icons/fa';
 
 function Tweet(props) {
@@ -21,7 +22,7 @@ function Tweet(props) {
                   {`@${props.tweetData.user.screenName}`}
                 </h6>
                 <p className="card-text">
-                  {props.tweetData.fullText}
+                  <Linkify>{props.tweetData.fullText}</Linkify>
                 </p>
                 {props.checkForMedia(props.tweetData) && props.getMedia(props.tweetData)}
                 <div className="flex">
