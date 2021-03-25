@@ -23,10 +23,6 @@ function getMedia(tweetData) {
   if (tweetData.extendedEntities.media[0].type === 'video') {
     return (
       <video className="embed-responsive rounded " src={tweetData.extendedEntities.media[0].video_info.variants[0].url} controls />
-      // <video>
-      //   <source src="mov_bbb.mp4" />
-      //   Your browser does not support HTML video.
-      // </video>
     );
   }
 }
@@ -44,10 +40,16 @@ function App() {
               <Home />
             </Route>
             <Route path="/random-tweet">
-              <RandomTweetPage checkForMedia={checkForMedia} getMedia={getMedia} />
+              <RandomTweetPage
+                checkForMedia={checkForMedia}
+                getMedia={getMedia}
+              />
             </Route>
             <Route path="/tweet-search">
-              <TweetSearchPage checkForMedia={checkForMedia} getMedia={getMedia} />
+              <TweetSearchPage
+                checkForMedia={checkForMedia}
+                getMedia={getMedia}
+              />
             </Route>
           </Switch>
         </div>
