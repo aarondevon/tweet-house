@@ -13,20 +13,20 @@ import RandomTweetPage from './RandomTweetPage';
 import TweetSearchPage from './TweetSearchPage';
 
 function checkForMedia(tweetData) {
-  if (tweetData.extendedEntities === null) {
-    return false;
-  }
+  return tweetData.extendedEntities;
 }
 
 function getMedia(tweetData) {
-  if (tweetData.tweetData.extendedEntities.media[0].type === 'photo') {
-    return <img src={tweetData.extendedEntities.media[0].media_url_https} alt="media from tweet" />;
+  if (tweetData.extendedEntities.media[0].type === 'photo') {
+    return <img className="img-fluid rounded" src={tweetData.extendedEntities.media[0].media_url_https} alt="media from tweet" />;
   }
-  if (tweetData.tweetData.extendedEntities.media[0].type === 'video') {
+  if (tweetData.extendedEntities.media[0].type === 'video') {
     return (
-      <video>
-        <source src={tweetData.extendedEntities.media[0].media_url_https} alt="media from tweet" />
-      </video>
+      <video className="embed-responsive rounded " src={tweetData.extendedEntities.media[0].video_info.variants[0].url} controls />
+      // <video>
+      //   <source src="mov_bbb.mp4" />
+      //   Your browser does not support HTML video.
+      // </video>
     );
   }
 }
