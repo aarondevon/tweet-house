@@ -21,7 +21,7 @@ function TweetSearchPage(props) {
 
     const response = await axios.get(url);
 
-    if (searchSelector === 'Keyword' && response.data.statuses.length > 0) {
+    if (searchSelector === 'Keyword' && response.data.statuses !== null) {
       setTweets(response.data.statuses);
     } else if (searchSelector === 'Username' && response.data.length > 0) {
       setTweets(response.data);
