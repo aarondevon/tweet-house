@@ -66,7 +66,7 @@ function TweetSearchPage(props) {
           onSubmit={handelTweetSearchSubmit}
         >
           <div className="row">
-            <div className="col-sm-4">
+            <div className="col-sm-5">
               <div className="form-group">
                 <select
                   id="search-select"
