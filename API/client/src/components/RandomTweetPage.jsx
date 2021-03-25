@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable arrow-body-style */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -5,7 +6,7 @@ import { Button, Modal } from 'react-bootstrap';
 import UserCard from './UserCard';
 import Tweet from './Tweet';
 
-function RandomTweetPage() {
+function RandomTweetPage(props) {
   const [screenNames] = useState(['npmjs', 'freeCodeCamp', 'ClassicalMPR', 'BBCScienceNews', 'NASA']);
   const [userProfileData, setUserProfileData] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -66,7 +67,11 @@ function RandomTweetPage() {
         </Modal.Header>
 
         <Modal.Body className="flex center-x">
-          <Tweet tweetData={randomTweet} />
+          <Tweet
+            tweetData={randomTweet}
+            checkForMedia={props.checkForMedia}
+            getMedia={props.getMedia}
+          />
         </Modal.Body>
 
         <Modal.Footer>
