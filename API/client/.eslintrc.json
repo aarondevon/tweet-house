@@ -11,11 +11,11 @@
     "linebreak-style": 0,
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "no-undef": "warn",
-    "arrow-body-style": "warn",
+    "arrow-body-style": "off",
     "dot-notation": "warn",
     "no-param-reassign": "warn",
     "react/destructuring-assignment": "off",
-    "react/prop-types": "warn",
+    "react/prop-types": "off",
     "react/button-has-type": "warn"
   }
 }

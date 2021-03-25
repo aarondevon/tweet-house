@@ -1,11 +1,8 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable arrow-body-style */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Tweet from './Tweet';
 
 function TweetSearchPage(props) {
-  // eslint-disable-next-line no-unused-vars
   const [tweetSearch, setTweetSearch] = useState('');
   const [tweets, setTweets] = useState([]);
   const [searchSelector, setSearchSelector] = useState('Keyword');
