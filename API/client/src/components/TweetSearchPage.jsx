@@ -10,9 +10,14 @@ function TweetSearchPage(props) {
   const [tweets, setTweets] = useState([]);
   const [searchSelector, setSearchSelector] = useState('Keyword');
 
+  const resetTweets = () => {
+    setTweets([]);
+  };
+
   const handelTweetSearchSubmit = async (event) => {
     event.preventDefault();
     console.log(searchSelector);
+    resetTweets();
     const url = searchSelector === 'Keyword' ? `https://localhost:44322/api/keyword/${tweetSearch}` : `https://localhost:44322/api/user/${tweetSearch}`;
     console.log(url);
 
