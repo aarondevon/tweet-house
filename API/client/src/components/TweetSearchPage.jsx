@@ -16,13 +16,11 @@ function TweetSearchPage(props) {
 
   const handelTweetSearchSubmit = async (event) => {
     event.preventDefault();
-    console.log(searchSelector);
     resetTweets();
     const url = searchSelector === 'Keyword' ? `https://localhost:44322/api/keyword/${tweetSearch}` : `https://localhost:44322/api/user/${tweetSearch}`;
-    console.log(url);
 
     const response = await axios.get(url);
-    console.log(response);
+
     if (searchSelector === 'Keyword' && response.data.statuses.length > 0) {
       setTweets(response.data.statuses);
     } else if (searchSelector === 'Username' && response.data.length > 0) {
