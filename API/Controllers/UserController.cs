@@ -25,15 +25,17 @@ namespace API.Controllers
 
         public async Task<IActionResult> getUser(string user)
         {
-            string bearerToken;
-            if (_configuration.GetValue<bool>("inDevelopment"))
-            {
-                bearerToken = _configuration.GetValue<string>("TwitterSettings:BearerToken");
-            }
-            else
-            {
-                bearerToken = Environment.GetEnvironmentVariable("TWITTER_BEARER_TOKEN");
-            }
+            //string bearerToken;
+            //if (_configuration.GetValue<bool>("inDevelopment"))
+            //{
+            //    bearerToken = _configuration.GetValue<string>("TwitterSettings:BearerToken");
+            //}
+            //else
+            //{
+            //    bearerToken = Environment.GetEnvironmentVariable("TWITTER_BEARER_TOKEN");
+            //}
+
+            string bearerToken = Environment.GetEnvironmentVariable("TWITTER_BEARER_TOKEN");
 
             var result = await _userService.GetUserData(bearerToken, user);
 
