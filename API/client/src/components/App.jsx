@@ -18,11 +18,11 @@ function checkForMedia(tweetData) {
 
 function getMedia(tweetData) {
   if (tweetData.extendedEntities.media[0].type === 'photo') {
-    return <img className="img-fluid rounded" src={tweetData.extendedEntities.media[0].media_url_https} alt="media from tweet" />;
+    return <img className="img-fluid rounded" src={tweetData.extendedEntities.media[0].mediaUrlHttps} alt="media from tweet" />;
   }
   if (tweetData.extendedEntities.media[0].type === 'video') {
     return (
-      <video className="embed-responsive rounded " src={tweetData.extendedEntities.media[0].video_info.variants[0].url} controls />
+      <video className="embed-responsive rounded " src={tweetData.extendedEntities.media[0].videoInfo.variants[0].url} controls />
     );
   }
 }
