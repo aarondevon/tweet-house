@@ -24,8 +24,7 @@ function Home() {
 
         <hr className="my-4" />
         <p>
-          Search for the most recent tweets of your favorite Twitter user, or checkout a random
-          tweet from one of mine.
+          Search for the most recent tweets of your favorite Twitter user, or checkout a random tweet from one of mine.
         </p>
       </div>
     </main>
