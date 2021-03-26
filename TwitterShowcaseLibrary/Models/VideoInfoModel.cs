@@ -1,10 +1,16 @@
-﻿namespace TwitterShowcaseLibrary.Models
+﻿using System.Runtime.Serialization;
+
+namespace TwitterShowcaseLibrary.Models
 {
+    [DataContract]
     public class VideoInfoModel
     {
-        public int[] aspect_ratio { get; set; }
-        public int duration_millis { get; set; }
-        public Variant[] variants { get; set; }
+        [DataMember(Name = "aspect_ratio")]
+        public int[] AspectRatio { get; set; }
+        [DataMember(Name = "duration_millis")]
+        public int DurationMillis { get; set; }
+        [DataMember(Name = "variants")]
+        public VideoVariantModel[] Variants { get; set; }
     }
 
 }
