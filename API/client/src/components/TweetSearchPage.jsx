@@ -19,16 +19,19 @@ function TweetSearchPage(props) {
     return response;
   };
 
-  const handelTweetSearchSubmit = async (event) => {
-    event.preventDefault();
-    resetTweets();
-    const response = await getTweets();
-
+  const setTweetsToState = (response) => {
     if (searchSelector === 'Keyword' && response.data.statuses !== null) {
       setTweets(response.data.statuses);
     } else if (searchSelector === 'Username' && response.data.length > 0) {
       setTweets(response.data);
     }
+  };
+
+  const handelTweetSearchSubmit = async (event) => {
+    event.preventDefault();
+    resetTweets();
+    const response = await getTweets();
+    setTweetsToState(response);
   };
 
   const handleSearchSelectorChange = (event) => {
