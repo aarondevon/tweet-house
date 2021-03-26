@@ -11,12 +11,18 @@ function TweetSearchPage(props) {
     setTweets([]);
   };
 
-  const handelTweetSearchSubmit = async (event) => {
-    event.preventDefault();
-    resetTweets();
+  const getTweets = async () => {
     const url = searchSelector === 'Keyword' ? `https://localhost:44322/api/keyword/${tweetSearchTerm}` : `https://localhost:44322/api/user/${tweetSearchTerm}`;
 
     const response = await axios.get(url);
+
+    return response;
+  };
+
+  const handelTweetSearchSubmit = async (event) => {
+    event.preventDefault();
+    resetTweets();
+    const response = await getTweets();
 
     if (searchSelector === 'Keyword' && response.data.statuses !== null) {
       setTweets(response.data.statuses);
