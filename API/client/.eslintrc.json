@@ -14,6 +14,7 @@
     "arrow-body-style": "off",
     "dot-notation": "warn",
     "no-param-reassign": "warn",
+    "max-len": "warn",
     "react/destructuring-assignment": "off",
     "react/prop-types": "off",
     "react/button-has-type": "warn"
