@@ -2,7 +2,7 @@
 {
     public class ExtendedEntityModel
     {
-        public ExtendedEntityMediaModel[] media { get; set; }
+        public ExtendedEntityMediaModel[] Media { get; set; }
     }
 
 }
