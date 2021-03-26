@@ -35,10 +35,7 @@ namespace API
         {
             
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
-            });
+
             services.AddSpaStaticFiles(config =>
             {
                 config.RootPath = "client/build";
@@ -56,28 +53,11 @@ namespace API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
-            }
-
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseAuthorization();
-            
-            //app.UseSpaStaticFiles(new StaticFileOptions { RequestPath = "/client/build" });
-
-            //    app.UseSpaStaticFiles(new StaticFileOptions
-            //    {
-            //        FileProvider = new PhysicalFileProvider(
-            //Path.Combine(env.ContentRootPath, "client", "build", "static")
-            //),
-            //        RequestPath = "/static"
-            //    });
 
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
