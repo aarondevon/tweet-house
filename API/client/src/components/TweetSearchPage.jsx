@@ -34,15 +34,19 @@ function TweetSearchPage(props) {
     setTweetsToState(response);
   };
 
+  const removeAllWhiteSpaceFromSearchTerm = (searchTerm) => {
+    return searchTerm.replace(/\s/g, '');
+  };
+
   const handleSearchSelectorChange = (event) => {
-    const trimmedSearch = tweetSearchTerm.replace(/\s/g, '');
+    const trimmedSearch = removeAllWhiteSpaceFromSearchTerm(tweetSearchTerm);
     setTweetSearchTerm(trimmedSearch);
     setSearchSelector(event.target.value);
   };
 
   const handleSearchChange = (event) => {
     if (searchSelector === 'Username') {
-      const trimmedSearch = event.target.value.replace(/\s/g, '');
+      const trimmedSearch = removeAllWhiteSpaceFromSearchTerm(event.target.value);
       setTweetSearchTerm(trimmedSearch);
       return;
     }
