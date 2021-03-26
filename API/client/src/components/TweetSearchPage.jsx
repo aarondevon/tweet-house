@@ -12,7 +12,7 @@ function TweetSearchPage(props) {
   };
 
   const getTweets = async () => {
-    const url = searchSelector === 'Keyword' ? `https://localhost:44322/api/keyword/${tweetSearchTerm}` : `https://localhost:44322/api/user/${tweetSearchTerm}`;
+    const url = searchSelector === 'Keyword' ? `/api/keyword/${tweetSearchTerm}` : `/api/user/${tweetSearchTerm}`;
 
     const response = await axios.get(url);
 
