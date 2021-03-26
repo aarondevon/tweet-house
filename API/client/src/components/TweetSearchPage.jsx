@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Tweet from './Tweet';
@@ -117,6 +118,7 @@ function TweetSearchPage(props) {
           </div>
 
         </form>
+        {console.log(tweets)}
         {tweets.length > 1 ? displayTweets(tweets) : <h3>No tweets to display</h3>}
       </div>
 
