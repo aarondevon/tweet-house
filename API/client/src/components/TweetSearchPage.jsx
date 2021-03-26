@@ -3,7 +3,7 @@ import axios from 'axios';
 import Tweet from './Tweet';
 
 function TweetSearchPage(props) {
-  const [tweetSearch, setTweetSearch] = useState('');
+  const [tweetSearchTerm, setTweetSearchTerm] = useState('');
   const [tweets, setTweets] = useState([]);
   const [searchSelector, setSearchSelector] = useState('Keyword');
 
@@ -14,7 +14,7 @@ function TweetSearchPage(props) {
   const handelTweetSearchSubmit = async (event) => {
     event.preventDefault();
     resetTweets();
-    const url = searchSelector === 'Keyword' ? `https://localhost:44322/api/keyword/${tweetSearch}` : `https://localhost:44322/api/user/${tweetSearch}`;
+    const url = searchSelector === 'Keyword' ? `https://localhost:44322/api/keyword/${tweetSearchTerm}` : `https://localhost:44322/api/user/${tweetSearchTerm}`;
 
     const response = await axios.get(url);
 
@@ -26,18 +26,18 @@ function TweetSearchPage(props) {
   };
 
   const handleSearchSelectorChange = (event) => {
-    const trimmedSearch = tweetSearch.replace(/\s/g, '');
-    setTweetSearch(trimmedSearch);
+    const trimmedSearch = tweetSearchTerm.replace(/\s/g, '');
+    setTweetSearchTerm(trimmedSearch);
     setSearchSelector(event.target.value);
   };
 
   const handleSearchChange = (event) => {
     if (searchSelector === 'Username') {
       const trimmedSearch = event.target.value.replace(/\s/g, '');
-      setTweetSearch(trimmedSearch);
+      setTweetSearchTerm(trimmedSearch);
       return;
     }
-    setTweetSearch(event.target.value);
+    setTweetSearchTerm(event.target.value);
   };
 
   const displayTweets = () => {
@@ -87,7 +87,7 @@ function TweetSearchPage(props) {
                   placeholder="Search"
                   name="search"
                   aria-label="Search"
-                  value={tweetSearch}
+                  value={tweetSearchTerm}
                   onChange={handleSearchChange}
                 />
               </div>
