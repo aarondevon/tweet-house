@@ -8,6 +8,6 @@ namespace TwitterShowcaseLibrary.Models
 {
     public class StatusModel
     {
-        public IEnumerable<TweetModel> statuses { get; set; }
+        public IEnumerable<TweetModel> Statuses { get; set; }
     }
 }
