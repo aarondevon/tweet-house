@@ -14,7 +14,7 @@ function RandomTweetPage(props) {
   const [randomTweet, setRandomTweet] = useState([]);
 
   const getUserProfileData = async (screenName) => {
-    const response = await axios.get(`https://localhost:44322/api/twitter-user/${screenName}`);
+    const response = await axios.get(`/api/twitter-user/${screenName}`);
     return response.data;
   };
 
@@ -30,7 +30,7 @@ function RandomTweetPage(props) {
   const handleShow = () => setShowModal(true);
 
   const getRandomTweetBasedOnScreenName = async (screenName) => {
-    const response = await axios.get(`https://localhost:44322/api/random-tweet/${screenName}`);
+    const response = await axios.get(`/api/random-tweet/${screenName}`);
     return response.data;
   };
 
