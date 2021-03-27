@@ -1,4 +1,4 @@
-# Twitter Showcase
+# Tweet House
 _Restful API app using the Twitter API_
 ### Tech Used
 
