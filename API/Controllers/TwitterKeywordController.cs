@@ -24,17 +24,10 @@ namespace API.Controllers
 
         public async Task<IActionResult> getKeywordTweet(string keyword)
         {
-            string bearerToken;
-            if (_configuration.GetValue<bool>("inDevelopment"))
-            {
-                bearerToken = _configuration.GetValue<string>("TwitterSettings:BearerToken");
-            }
-            else
-            {
-                bearerToken = Environment.GetEnvironmentVariable("TWITTER_BEARER_TOKEN");
-            }
+            string bearerToken = Environment.GetEnvironmentVariable("TWITTER_BEARER_TOKEN");
 
             var result = await _keywordTweetService.GetTweetDataBasedOnKeyword(bearerToken, keyword);
+
             return Ok(result);
         }
     }
