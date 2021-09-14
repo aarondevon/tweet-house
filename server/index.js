@@ -1,15 +1,14 @@
 let express = require('express');
 let app = express();
-const port = 3002;
+const PORT = process.env.PORT || 5000;
 
-app.get('/', (request, response) => {
-  console.log(`URL: ${request.url}`);
-  response.send('Hello, Server!');
+app.get('/api', (request, response) => {
+  response.json({message: "Hello from the server!"})
 });
 
 // Start the server
-const server = app.listen(port, (error) => {
+app.listen(PORT, (error) => {
   if (error) return console.log(`Error: ${error}`);
 
-  console.log(`Server listening on port ${server.address().port}`);
+  console.log(`Server listening on port ${PORT}`);
 });
